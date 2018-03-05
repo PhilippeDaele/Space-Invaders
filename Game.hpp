@@ -15,7 +15,7 @@
 #include "Entity.hpp"
 #include "Player.hpp"
 #include "Enemy.hpp"
-#include "Bullets.hpp"
+#include "Bullet.hpp"
 
 
 class Game : public sf::Drawable {
@@ -26,6 +26,7 @@ public:
 private:
     Player mPlayer;
     Enemy mEnemy;
+    Bullet mBullet;
     sf::Texture mBackgroundTex;
     sf::Sprite mBackgroundSprite;
     

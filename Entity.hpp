@@ -20,9 +20,13 @@ private:
     sf::Sprite sprite;
     sf::Texture textures;
 public:
-    //collision() function: bool
+    //virtual bool collision() = 0;
     //move() function : void
     //shoot() function, void?
+    
+    virtual void update(float dt) = 0;
+    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const = 0;
+    
     
 };
 #endif /* Entity_hpp */

@@ -21,13 +21,16 @@ Game::Game()
 void Game::Update(float dt) {
     mPlayer.update(dt);
     mEnemy.update(dt);
+    mBullet.update(dt);
 }
 
 void Game::draw(sf::RenderTarget &target, sf::RenderStates states) const {
-    
     target.draw(mBackgroundSprite,states);
-    target.draw(mPlayer,states);
-    target.draw(mEnemy,states);
+    target.draw(mPlayer, states);
+    target.draw(mEnemy, states);
+    target.draw(mBullet, states);
+    
+    
 }
 
 

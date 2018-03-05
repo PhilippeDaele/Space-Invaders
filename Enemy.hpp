@@ -10,17 +10,18 @@
 #define Enemy_hpp
 #include <stdio.h>
 #include "Entity.hpp"
-#include "Bullets.hpp"
+#include "Bullet.hpp"
 
 class Enemy : public Entity, public sf::Drawable{
 private:
     sf::Texture enemyTexture;
     sf::Sprite enemySprite;
 public:
-    Enemy();
     
+    Enemy();
     int getX();
     int getY();
+    bool collision();
     void update(float dt);
     void draw(sf::RenderTarget &target, sf::RenderStates states) const;
     

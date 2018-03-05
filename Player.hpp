@@ -10,20 +10,20 @@
 #define Player_hpp
 #include <stdio.h>
 #include "Entity.hpp"
-#include "Bullets.hpp"
+#include "Bullet.hpp"
 
 class Player : public Entity, public sf::Drawable{
 private:
     sf::Texture playerTexture;
     sf::Sprite playerSprite;
+    bool alive;
+    Bullet mbullet;
 public:
+    
     Player();
-    
     int getX();
-    
-    void draw(sf::RenderTarget &target, sf::RenderStates states) const;
-    
     void update(float dt);
+    void draw(sf::RenderTarget &target, sf::RenderStates states) const;
     
 };
 

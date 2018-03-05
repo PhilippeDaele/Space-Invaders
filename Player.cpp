@@ -7,7 +7,7 @@
 //
 
 #include "Player.hpp"
-#include "Bullets.hpp"
+#include "Bullet.hpp"
 
 
 Player::Player(){
@@ -26,11 +26,22 @@ Player::Player(){
 void Player::update(float dt) {
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
         playerSprite.move(-1,0);
+        if(playerSprite.getPosition().x < 0){
+            playerSprite.move(1, 0);
+        }
     }
     
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
         playerSprite.move(1,0);
+        if(playerSprite.getPosition().x > 1400){ // change the value 1400 to window function??
+            playerSprite.move(-1,0);
+        }
     }
+    
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+        
+    }
+    
 }
 
 void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const {
@@ -38,38 +49,11 @@ void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 }
 
 
-
-
-
-
-
-
-
 int Player::getX() {
     std::cout << std::to_string(playerSprite.getPosition().x) << std::endl;
     return playerSprite.getPosition().x;
 }
 
-
-//void Player::update() {
-//    playerSprite.setPosition(playerSprite.getPosition());
-//}
-
-//void Player::updateMove() {
-//
-//    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-//        playerSprite.move(-1,0);
-//    }
-//
-//    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-//        playerSprite.move(1,0);
-//    }
-//
-//}
-
-//void Player::loadTexture(sf::Texture playerTexture) {
-//    
-//}
 
 
 

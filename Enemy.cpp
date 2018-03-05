@@ -7,7 +7,7 @@
 //
 
 #include "Enemy.hpp"
-#include "Bullets.hpp"
+#include "Bullet.hpp"
 
 Enemy::Enemy(){
     if(!enemyTexture.loadFromFile("/Users/philippevandaele/Desktop/SFML/SFML Template/SFML Template/res/img/Tie-Fighter.png")){
